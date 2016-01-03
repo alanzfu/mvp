@@ -24,8 +24,8 @@ body{
 }
 
 .selected-companies{
-  width: 60%;
   margin: 30px;
+  min-height: 56px;
 
 }
 
@@ -34,7 +34,7 @@ body{
 }
 
 .company-title{
-
+  display: inline-block;
 }
 
 .company-blurb{
@@ -66,7 +66,6 @@ body{
 }
 
 .company-input-button{
-  margin-left: 3px;
   background-color: #DF81C1;
   border: 1px solid #DF81C1;
   border-bottom-right-radius: 5px;

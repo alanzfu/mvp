@@ -1,0 +1,94 @@
+body{
+  font-family: 'Lato', sans-serif;
+  color: rgba(0,0,0,0.7);
+}
+
+.container{
+  width: 1000px;
+}
+
+.main {
+  text-align: center;
+}
+
+.main-title{
+  margin: 30px 0px;
+}
+
+.main-blurb{
+  width: 70%;
+  margin: 50px auto 20px;
+  font-size: 1.5em;
+  line-height: 130%;
+  font-weight: normal;
+}
+
+.selected-companies{
+  width: 60%;
+  margin: 30px;
+
+}
+
+.company-logo{
+
+}
+
+.company-title{
+
+}
+
+.company-blurb{
+
+}
+
+
+
+.col-centered{
+  margin: 0px auto;
+  float: none;
+}
+
+.company-input{
+  height: 3em;
+  font-size: 1.5em;
+  padding: 15px;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.company-input:focus{
+  outline: none;
+  border: 1px solid #DF81C1;
+  webkit-box-shadow: 0px 0px 10px 2px rgba(223,129,192,1);
+  -moz-box-shadow: 0px 0px 10px 2px rgba(223,129,192,1);
+  box-shadow: 0px 0px 10px 2px rgba(223,129,192,1);
+}
+
+.company-input-button{
+  margin-left: 3px;
+  background-color: #DF81C1;
+  border: 1px solid #DF81C1;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.company-input-button:hover{
+  cursor: pointer;
+  background-color: #CC54A5; 
+}
+
+.company-input-button-image{
+  padding: 16px 0px 15px;
+  width: 47px;
+}
+
+
+
+
+
+
+
+
+
+

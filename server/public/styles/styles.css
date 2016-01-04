@@ -1,0 +1,166 @@
+body{
+  font-family: 'Lato', sans-serif;
+  color: rgba(0,0,0,0.7);
+}
+
+.container{
+  width: 1000px;
+
+}
+
+.main {
+  text-align: center;
+}
+
+.main-title{
+  margin: 30px 0px;
+}
+
+.main-blurb{
+  width: 70%;
+  margin: 50px auto 20px;
+  font-size: 1.5em;
+  line-height: 150%;
+  font-weight: normal;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  padding-bottom: 20px;
+  font-weight: 300;
+}
+
+.selected-companies{
+  margin: 30px 0px;
+  min-height: 56px;
+}
+
+.company-tile{
+  display: inline-block;
+  padding: 0px 22px;
+  background-color: rgba(223,129,192,0.3);
+  transition: background-color 0.1s ease;
+}
+
+.company-tile h3{
+  margin: 15px 0px;
+}
+
+
+.company-tile:hover{
+  cursor: pointer;
+  background-color: rgba(223,129,192,0.5);
+}
+
+.company-title{
+  display: inline-block;
+}
+
+
+.company-blurb{
+}
+
+
+
+.companies{
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  position:relative;
+}
+
+.col-centered{
+  margin: 0px auto;
+  float: none;
+}
+
+.company-input{
+  height: 2.5em;
+  font-size: 1.5em;
+  padding: 15px;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  font-weight: 300;
+}
+
+.company-input:focus{
+  outline: none;
+  border: 1px solid #DF81C2;
+/*  webkit-box-shadow: 0px 0px 10px 2px rgba(223,129,192,1);
+  -moz-box-shadow: 0px 0px 10px 2px rgba(223,129,192,1);
+  box-shadow: 0px 0px 10px 2px rgba(223,129,192,1);*/
+}
+
+.company-input-button{
+  background-color: #DF81C1;
+  border: 1px solid #DF81C1;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  opacity: 0.8;
+}
+
+.company-input-button:hover{
+  cursor: pointer;
+  background-color: rgba(223,129,192,0.8);
+}
+
+.company-input-button-image{
+  padding: 14px 0px 14px;
+  width: 35px;
+}
+
+.company-dropdown{
+  width: 78%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-top: none;
+  padding:0px;
+  position:absolute;
+  top:52px;
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.5);
+  
+}
+
+.company-dropdown-entry{
+  padding: 0px 10px;
+  text-align: left;
+  z-index: 1;
+  transition: background-color 0.07s ease;
+  background-color: white;
+}
+
+.company-dropdown-entry:hover{
+  cursor: pointer;
+  background-color: #F8C6E8;
+}
+
+.technologies{
+  padding: 30px 10px;
+  width: 70%;
+  border-top: 1px solid rgba(0,0,0,0.2);
+}
+
+.technology-entry{
+  text-align: centered;
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+.technology-entry p{
+  margin: 15px;
+}
+
+.technology-entry p a{
+  color: #DF81C1;
+  text-decoration: none;
+}
+
+.technology-entry p a:hover{
+  color: #8D1064;
+}
+
+
+
+
+
+
+
+

@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>InterStack</title>
+
   <link rel="icon" href="assets/stack-icon.png" type="image/x-icon" />
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300,900' rel='stylesheet' type='text/css'>
@@ -11,7 +12,7 @@
 
 
 
-  <div class="container main">
+  <div ng-app='interStack' ng-controller='interController' class="container main">
     <div class="navbar row">
       <h3 class="main-blurb">
         Tell us up to 5 companies you want to work for.</br> We give you their intersecting technologies.
@@ -20,9 +21,8 @@
 
     <div class="row selected-companies">
       <div class="col-sm-8 col-centered">
-        <div class="company-tile col-centered">
-          <img class="company-logo"></img>
-          <h3 class="company-title">Slack</h3>
+        <div ng-repeat="x in selectedCompanies" ng-click="deselect()" class="company-tile col-centered">
+          <h3 class="company-title"> {{ x.name }} </h3>
         </div>
       </div>
     </div>
@@ -31,26 +31,26 @@
     <div class="row companies">
       <div class="col-sm-6 col-centered">
         <form class="company-input-form">
-          <input placeholder="Where do you want to work?" class="company-input col-sm-10" autofocus>
-          <div class="company-input-button col-sm-2"><img class="company-input-button-image" src="assets/intersection.png"></div>
+          <input ng-model="inputString" placeholder="Where do you want to work?" class="company-input col-sm-10" autofocus>
+          <div ng-click="intersect()" class="company-input-button col-sm-2"><img class="company-input-button-image" src="assets/intersection.png"></div>
         </form>
 
-        <div class="company-dropdown">
-          <div class="col-sm-12 company-dropdown-entry">
-            <h4 class="company-dropdown-title">Apple</h4>
+        <div ng-hide="dropdownHidden()" class="company-dropdown">
+          <div ng-repeat="entry in dropdown" ng-click="addToSelectedCompanies()" class="col-sm-12 company-dropdown-entry">
+            <h4 class="company-dropdown-title"> {{ entry.name }} </h4>
           </div>
         </div>
       </div>
     </div>
 
-
+    <!--ADD LOADING IMAGE HERE -->
 
     <div class="row">
       <img 
       <div class="col-sm-12 technologies col-centered">
-        <div class="col-sm-8 technology-entry col-centered">
+        <div ng-repeat="tech in technologies" class="col-sm-8 technology-entry col-centered">
           <p>
-            <a href="#">mySQL:</a> Used by <a href="#">Slack</a>, <a href="#">Uber</a>, and <a href="#">Pinterest</a>
+            <a href="{{ tech.url }}">{{ tech.name }}:</a> Used by <a ng-repeat="company in tech.companies" href="#"> {{company.name}} </a>
           </p>
         </div>
 
@@ -59,16 +59,9 @@
       </div>
     </div>
     
-
-
-
-
-
-
-
-
   </div>
 
-
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

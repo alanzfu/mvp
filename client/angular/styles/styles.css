@@ -34,7 +34,7 @@ body{
 
 .company-tile{
   display: inline-block;
-  margin: 0px 10px;
+  padding: 0px 22px;
   background-color: rgba(223,129,192,0.3);
   transition: background-color 0.1s ease;
 }
@@ -71,7 +71,7 @@ body{
 }
 
 .company-input{
-  height: 3em;
+  height: 2.5em;
   font-size: 1.5em;
   padding: 15px;
   border: 1px solid rgba(0,0,0,0.2);
@@ -102,8 +102,8 @@ body{
 }
 
 .company-input-button-image{
-  padding: 16px 0px 15px;
-  width: 47px;
+  padding: 14px 0px 14px;
+  width: 35px;
 }
 
 .company-dropdown{

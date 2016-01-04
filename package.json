@@ -1,0 +1,24 @@
+{
+  "name": "mvp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/alanzfu/mvp"
+  },
+  "author": "Alan Fu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alanzfu/mvp/issues"
+  },
+  "homepage": "https://github.com/alanzfu/mvp",
+  "dependencies": {
+    "bluebird": "^3.1.1",
+    "express": "^4.13.3",
+    "pg": "^4.4.3"
+  }
+}

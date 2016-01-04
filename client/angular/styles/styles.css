@@ -112,11 +112,11 @@ body{
   border-top: none;
   padding:0px;
   position:absolute;
-  top:63px;
+  top:52px;
   -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.5);
   -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.5);
   box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.5);
-  display: none;
+  
 }
 
 .company-dropdown-entry{

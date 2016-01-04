@@ -37,7 +37,10 @@ body{
   margin: 0px 10px;
   background-color: rgba(223,129,192,0.3);
   transition: background-color 0.1s ease;
+}
 
+.company-tile h3{
+  margin: 15px 0px;
 }
 
 
@@ -137,20 +140,20 @@ body{
 
 .technology-entry{
   text-align: centered;
-  font-weight: 200;
   font-size: 1.5em;
+  font-weight: 300;
 }
 
-.technology-entry span{
-  font-weight: 400;
+.technology-entry p{
+  margin: 15px;
 }
 
-.technology-entry a{
+.technology-entry p a{
   color: #DF81C1;
   text-decoration: none;
 }
 
-.technology-entry a:hover{
+.technology-entry p a:hover{
   color: #8D1064;
 }
 

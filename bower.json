@@ -9,6 +9,7 @@
   "moduleType": [
     "node"
   ],
+  "directory": "server/public/bower_components",
   "license": "MIT",
   "private": true,
   "ignore": [

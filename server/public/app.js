@@ -33,29 +33,46 @@ angular.module('interStack', [])
 
 .controller('interController', function($scope, interFactory){
   //Init------------------------------------------
+  $scope.sorry = '';
   interFactory.getAllCompanies()
   .then(function(companiesList){
-    $scope.dropdown = companiesList;
+    $scope.companies = companiesList;
+
   });
 
 
-
   //Selected Companies ------------------------------------------
-  $scope.selectedCompanies = [
-    {name: "Slack"},
-    {name: "Uber"}
-  ];
-  $scope.deselect = function(){
-    $scope.selectedCompanies.splice($index, 1);
+  $scope.selectedCompanies = [];
+  $scope.deselect = function(index){
+    $scope.selectedCompanies.splice(index, 1);
   };
 
   //Companies Dropdown ------------------------------------------
-  $scope.companies = [];
-  // $scope.dropdown = [];
+  $scope.dropdown = [];
   $scope.inputString = '';
 
-  $scope.addToSelectedCompanies = function(){
-    selectedCompanies.push($scope.dropdown[$index]);
+  $scope.inputHandler = function(keyEvent){
+    $scope.dropdown = $scope.companies.filter(function(company){
+      if(company.name.slice(0,$scope.inputString.length) === $scope.inputString.toLowerCase()){
+        return true;
+      }
+      else return false;
+    });
+    if($scope.inputString === ''){
+      $scope.dropdown = [];
+    }
+
+    if(keyEvent.keyCode === 13){
+      $scope.selectedCompanies.push({name: $scope.inputString});
+      $scope.inputString = '';
+      $scope.dropdown = [];
+    }
+  }
+
+  $scope.addToSelectedCompanies = function(num){
+    $scope.selectedCompanies.push($scope.dropdown[num]);
+    $scope.inputString = '';
+    $scope.dropdown = [];
   };
   
 
@@ -63,6 +80,11 @@ angular.module('interStack', [])
     interFactory.getTechnologies($scope.selectedCompanies)
     .then(function(allTechnologies){
       $scope.technologies = allTechnologies;
+      if(allTechnologies.length === 0) {
+        $scope.sorry = "Sorry! We couldn't any shared technologies between those companies :/"
+      } else{
+        $scope.sorry = "";
+      }
     });
   }
 

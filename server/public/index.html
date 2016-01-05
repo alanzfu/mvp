@@ -21,7 +21,7 @@
 
     <div class="row selected-companies">
       <div class="col-sm-8 col-centered">
-        <div ng-repeat="x in selectedCompanies" ng-click="deselect()" class="company-tile col-centered">
+        <div ng-repeat="x in selectedCompanies" ng-click="deselect($index)" class="company-tile col-centered">
           <h3 class="company-title"> {{ x.name }} </h3>
         </div>
       </div>
@@ -31,12 +31,12 @@
     <div class="row companies">
       <div class="col-sm-6 col-centered">
         <form class="company-input-form">
-          <input ng-model="inputString" placeholder="Where do you want to work?" class="company-input col-sm-10" autofocus>
+          <input ng-model="inputString" ng-keyup="inputHandler($event)" placeholder="Where do you want to work?" class="company-input col-sm-10" autofocus>
           <div ng-click="intersect()" class="company-input-button col-sm-2"><img class="company-input-button-image" src="assets/intersection.png"></div>
         </form>
 
         <div ng-hide="dropdownHidden()" class="company-dropdown">
-          <div ng-repeat="entry in dropdown" ng-click="addToSelectedCompanies()" class="col-sm-12 company-dropdown-entry">
+          <div ng-repeat="entry in dropdown" ng-click="addToSelectedCompanies($index)" class="col-sm-12 company-dropdown-entry">
             <h4 class="company-dropdown-title"> {{ entry.name }} </h4>
           </div>
         </div>
@@ -53,7 +53,9 @@
             <a href="{{ tech.url }}">{{ tech.name }}:</a> used by <a ng-repeat="name in tech.companies" href="#"> {{name}} </a>
           </p>
         </div>
-
+          <p class="technology-entry">
+            {{sorry}} {{scope.sorryURL}}
+          </p>
 
 
       </div>

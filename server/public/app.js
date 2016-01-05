@@ -11,7 +11,8 @@ angular.module('interStack', [])
     });
   };
 
-  var getTechnologies = function(selectCompanies) {
+  var getTechnologies = function(selectCompanies, $scope) {
+    
     return $http({
 
       method:'POST',
@@ -33,6 +34,7 @@ angular.module('interStack', [])
 
 .controller('interController', function($scope, interFactory){
   //Init------------------------------------------
+  $scope.showLoadingImage = false;
   $scope.sorry = '';
   interFactory.getAllCompanies()
   .then(function(companiesList){
@@ -77,8 +79,11 @@ angular.module('interStack', [])
   
 
   $scope.intersect = function(){
+    $scope.showLoadingImage = true;
+    $scope.sorry = '';
     interFactory.getTechnologies($scope.selectedCompanies)
     .then(function(allTechnologies){
+      $scope.showLoadingImage = false;
       $scope.technologies = allTechnologies;
       if(allTechnologies.length === 0) {
         $scope.sorry = "Sorry! We couldn't any shared technologies between those companies :/"

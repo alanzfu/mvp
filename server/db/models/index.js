@@ -23,10 +23,10 @@ module.exports = {
       var step = function(x){
         if(x < companyList.length){
           db.query('SELECT * FROM company WHERE name='+"'"+companyList[x]+"'", function(err,match){
-            if(match.name === 'error'){
+            if(match.rowCount === 0){
               archive.scrapeTech(companyList[x],function(arr){
                 allTechnologies.push({name:companyList[x], technology:arr});
-                db.query('INSERT INTO company (name) values ('+companyList[x]+')', function(err,res){
+                db.query("INSERT INTO company (name) values ('"+companyList[x]+"')", function(err,res){
                   if(err) throw err;
                   step(x + 1);  
                 });

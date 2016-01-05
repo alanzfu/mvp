@@ -27,6 +27,14 @@ body{
   font-weight: 300;
 }
 
+.credit{
+  color: #DF81C1;
+}
+
+.credit:hover{
+  color: #8D1064;
+}
+
 .selected-companies{
   margin: 30px 0px;
   min-height: 56px;
@@ -133,7 +141,7 @@ body{
 }
 
 .technologies{
-  padding: 30px 10px;
+  padding: 20px 10px;
   width: 70%;
   border-top: 1px solid rgba(0,0,0,0.2);
 }

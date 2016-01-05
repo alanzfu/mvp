@@ -17,6 +17,7 @@
       <h3 class="main-blurb">
         Tell us up to 5 companies you want to work for.</br> We give you their intersecting technologies.
       </h3>
+      <p>Thanks to <a class="credit" href="http://www.stackshare.io">Stackshare.io</a></p>
     </div>
 
     <div class="row selected-companies">
@@ -48,6 +49,10 @@
     <div class="row">
       <img 
       <div class="col-sm-12 technologies col-centered">
+        <div class="loading-image" ng-show='showLoadingImage'>
+          <img src="/assets/loading.gif">
+        </div>
+
         <div ng-repeat="tech in technologies" class="col-sm-8 technology-entry col-centered">
           <p>
             <a href="{{ tech.url }}">{{ tech.name }}:</a> used by <a ng-repeat="name in tech.companies" href="#"> {{name}} </a>

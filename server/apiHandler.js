@@ -18,7 +18,6 @@ module.exports.technologies = function(req, res){
     if(err){
       throw err;
     }
-    console.log('from apihandler');
     res.send(data);
   });
 }

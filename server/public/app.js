@@ -7,6 +7,7 @@ angular.module('interStack', [])
       url: '/api/companies'
     })
     .then( function (resp) {
+      console.log(resp.data);
       return resp.data;
     });
   };
@@ -83,6 +84,13 @@ angular.module('interStack', [])
     $scope.sorry = '';
     interFactory.getTechnologies($scope.selectedCompanies)
     .then(function(allTechnologies){
+      //refresh company list
+      interFactory.getAllCompanies()
+      .then(function(companiesList){
+        $scope.companies = companiesList;
+
+      });
+      //show technologies
       $scope.showLoadingImage = false;
       $scope.technologies = allTechnologies;
       if(allTechnologies.length === 0) {

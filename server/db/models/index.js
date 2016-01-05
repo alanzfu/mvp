@@ -51,7 +51,10 @@ module.exports = {
                         })
                       }
                     }
-                    techStep(0);
+                    if(arr.length>0){
+                      techStep(0);  
+                    }
+                    
                     
                   });
                   if(err) throw err;

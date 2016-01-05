@@ -35,7 +35,7 @@ angular.module('interStack', [])
   //Init------------------------------------------
   interFactory.getAllCompanies()
   .then(function(companiesList){
-    $scope.companies = companiesList;
+    $scope.dropdown = companiesList;
   });
 
 
@@ -62,21 +62,13 @@ angular.module('interStack', [])
   $scope.intersect = function(){
     interFactory.getTechnologies($scope.selectedCompanies)
     .then(function(allTechnologies){
-      //do some sorting here and then reassign scope.technologies
+      $scope.technologies = allTechnologies;
     });
   }
 
 
   //Technologies ------------------------------------------
-  $scope.technologies = [
-    {
-      name: 'mySQL',
-      companies: [{
-        name: 'Uber'
-      }],
-      url: 'http://www.mysql.com'
-    }
-  ];
+  $scope.technologies = [];
 
 
 

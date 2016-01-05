@@ -50,7 +50,7 @@
       <div class="col-sm-12 technologies col-centered">
         <div ng-repeat="tech in technologies" class="col-sm-8 technology-entry col-centered">
           <p>
-            <a href="{{ tech.url }}">{{ tech.name }}:</a> Used by <a ng-repeat="company in tech.companies" href="#"> {{company.name}} </a>
+            <a href="{{ tech.url }}">{{ tech.name }}:</a> used by <a ng-repeat="name in tech.companies" href="#"> {{name}} </a>
           </p>
         </div>
 

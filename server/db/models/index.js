@@ -62,6 +62,13 @@ var sortingHelper = function(techArray){
       }
     }
   }
-  return objectMap;
+  var filteredArray = [];
+  for(var key in objectMap){
+    
+    if(objectMap[key].length >= 2) {
+      filteredArray.push({name: key, companies: objectMap[key]});
+    }
+  }
+  return filteredArray;
 }
 

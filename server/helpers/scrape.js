@@ -1,24 +1,22 @@
 //Modules Required
 var request = require('request');
 
-
 //Given URL, and Company Id
-exports.scrapeTech = function(companyName){
-
+exports.scrapeTech = function(companyName, callback){
   request('http://www.stackshare.io/' + companyName + '/' + companyName + '/', function(err, res, body){
     if(err) {
       throw err;
     }
 
     //THIS SHOULD BE REGEX LATER
-    var technologies = exports.parseHTMLForTechnologies(body);
-    console.log(technologies);
+    var technologies = exports.parseHTMLForTechnologies(body, callback);
+    
   })
   
 }
 
 
-exports.parseHTMLForTechnologies = function(htmlString){
+exports.parseHTMLForTechnologies = function(htmlString, callback){
 
   var technologyArr = htmlString.split('<a class="stack-service-name-under" href="/');
   technologyArr.shift(); //deletes preceding html
@@ -31,6 +29,6 @@ exports.parseHTMLForTechnologies = function(htmlString){
     technology.pop();
     technologyArr[i] = technology[0];
   }
-
+  callback(technologyArr);
   return technologyArr;
 }

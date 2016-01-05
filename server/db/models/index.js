@@ -2,14 +2,16 @@
 var db = require('../db.js');
 
 
+
 module.exports = {
   companies: {
     get: function(callback){
-      db.Company.findAll({})
-      .then(function(results){
-        console.log('from index',results);
-        callback(results);
-      })
+      db.query('SELECT * FROM company', function(err, data){
+        if(err){
+          console.log('get All query effup');
+        }
+        callback(null,data.rows);
+      });
     }
   },
   technologies: {
@@ -24,3 +26,4 @@ module.exports = {
     }
   }
 }
+

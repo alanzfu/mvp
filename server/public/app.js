@@ -13,9 +13,12 @@ angular.module('interStack', [])
 
   var getTechnologies = function(selectCompanies) {
     return $http({
+
       method:'POST',
-      data: selectCompanies,
-      url: 'api/companies/technologies'
+      url: '/api/companies/technologies',
+      data: {
+        companies:selectCompanies
+      }
     })
     .then( function(resp) {
       return resp.data;
@@ -40,7 +43,7 @@ angular.module('interStack', [])
   //Selected Companies ------------------------------------------
   $scope.selectedCompanies = [
     {name: "Slack"},
-    {name: "Uber"},
+    {name: "Uber"}
   ];
   $scope.deselect = function(){
     $scope.selectedCompanies.splice($index, 1);
@@ -48,7 +51,7 @@ angular.module('interStack', [])
 
   //Companies Dropdown ------------------------------------------
   $scope.companies = [];
-  $scope.dropdown = [];
+  // $scope.dropdown = [];
   $scope.inputString = '';
 
   $scope.addToSelectedCompanies = function(){
@@ -57,7 +60,7 @@ angular.module('interStack', [])
   
 
   $scope.intersect = function(){
-    interFactory.getTechnologies()
+    interFactory.getTechnologies($scope.selectedCompanies)
     .then(function(allTechnologies){
       //do some sorting here and then reassign scope.technologies
     });

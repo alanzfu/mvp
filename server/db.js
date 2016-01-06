@@ -23,15 +23,4 @@ client.query('CREATE TABLE IF NOT EXISTS combos (companyName VARCHAR(40), techno
   }
 });
 
-// client.query('ALTER TABLE combos ADD FOREIGN KEY (companyId) REFERENCES company (id);', function(err, res){
-//   if(err){
-//     console.log('error altering forieng key')
-//   }
-// });
-// client.query('ALTER TABLE combos ADD FOREIGN KEY (technologyId) REFERENCES technology (id);', function(err, res){
-//   if(err){
-//     console.log('error altering forieng key')
-//   }
-// });
-
 module.exports = client;

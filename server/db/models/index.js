@@ -1,4 +1,5 @@
 var path = require('path');
+var Promise = require('bluebird');
 
 var db = require(path.join(__dirname,'../../db.js'));
 var archive = require('../../helpers/scrape.js');
@@ -31,7 +32,7 @@ module.exports = {
                   archive.scrapeTech(companyList[x],function(arr){
                     var techStep = function(y){
                       if(y < arr.length){
-                        //put it into the database
+                        //put tech into the database
                         db.query("INSERT INTO combos (companyName, technologyName) values ('"+companyList[x]+"'," + "'"+arr[y]+"')", function(err,res){
                           if(err){
                             console.log('err insert into combos');
@@ -97,12 +98,18 @@ var sortingHelper = function(techArray){
     }
   }
   var filteredArray = [];
-  for(var key in objectMap){
-    
-    if(objectMap[key].length >= 2) {
+  if(techArray.length > 1){
+    for(var key in objectMap){
+      if(objectMap[key].length >= 2) {
+        filteredArray.push({name: key, companies: objectMap[key]});
+      }
+    }
+  } else {
+    for(var key in objectMap){
       filteredArray.push({name: key, companies: objectMap[key]});
     }
   }
+
   return filteredArray;
 }
 
